@@ -1,18 +1,16 @@
 <template>
-	<div class="box">
+	<div class="content">
 		<vHeader></vHeader>
-		<div>content</div>
+		<div class="main">content</div>
 		<vFooter></vFooter>
 	</div>
 </template>
 
 <script>
-import vHeader from './header'
-import vFooter from './footer'
 export default {
+	name: 'Content',
 	components: {
-		vHeader,
-		vFooter
+		
   	},
 	created(){
 		let ids = this.$route.params.id
@@ -26,7 +24,11 @@ export default {
 </script>
 
 <style>
-	.box{
+	.content{
+		height: 100%;
+		background-color: #f2f2f2;
+	}
+	.main{
 		padding-top: 48px;
 	}
 </style>

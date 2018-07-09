@@ -1,35 +1,54 @@
 <template>
     <div class="footer">
-        <ul>
+        <!-- <ul>
             <li @click="changePage(index)" v-for="(menu,index) in menus" :key="menu.path">{{ menu.text }}</li>
-        </ul>
+        </ul> -->
+        <van-tabbar v-model="checked" @change="changeTabs">
+            <van-tabbar-item v-for="menu in menus" :key="menu.path">
+                <span>{{ menu.text }}</span>
+                <template slot="icon" slot-scope="props">
+                    <img :src="props.checked ? menu.active : menu.normal" />
+                </template>
+            </van-tabbar-item>
+        </van-tabbar>
     </div>
 </template>
 <script>
     export default {
-        name: 'footer',
+        name: 'Footer',
         data () {
             return {
+                checked: 0,
                 menus: [
                     {
                         path: '/',
-                        text: '首页'
+                        text: '??',
+                        normal: '../../assets/icon_mineNo.png',
+                        active: '../../assets/icon_mine.png'
                     },
                     {
-                        path: '/hello',
-                        text: '我的'
+                        path: '/content/1',
+                        text: '??',
+                        normal: '../../assets/icon_mineNo.png',
+                        active: '../../assets/icon_mine.png'
+                    },
+                    {
+                        path: '/mine',
+                        text: '??',
+                        normal: '../../assets/icon_mineNo.png',
+                        active: '../../assets/icon_mine.png'
                     }
                 ]
             }
         },
         methods: {
-            changePage (index) {
-                this.$router.push(this.menus[index].path)
+            changeTabs (checked) {
+                this.$router.push(this.menus[checked].path)
             }
         }
     }
 </script>
-<style scoped>
+<style>
     @import "../style/reset.css";
     .footer{
         width: 100%;
@@ -40,7 +59,7 @@
         bottom: 0;
         background-color: #fff;
     }
-    .footer ul{
+    /* .footer ul{
         display: block;
         width: 100%;
         height: 100%;
@@ -52,5 +71,8 @@
         float: left;
         width: 50%;
         text-align: center;
+    } */
+    .van-tabbar-item__icon{
+        height: 20px;
     }
 </style>

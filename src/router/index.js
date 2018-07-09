@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index'
 import Content from '@/page/content'
-import Hello from '@/page/hello'
+import Mine from '@/page/mine'
 
 Vue.use(Router)
 
@@ -17,8 +17,9 @@ export default new Router({
       	component: Content
     },
     {
-        path: '/hello',
-        component: Hello
+        path: '/mine',
+        component: Mine
     }
-  ]
+  ],
+  mode:"history"
 })

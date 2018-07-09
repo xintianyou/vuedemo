@@ -1,9 +1,9 @@
 <template>
-    <div class="header">???</div>
+    <div class="header">票查查</div>
 </template>
 <script>
     export default {
-        name: 'header',
+        name: 'Header',
 
     }
 </script>

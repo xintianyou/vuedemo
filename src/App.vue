@@ -20,7 +20,7 @@ export default {
   mounted(){
         // 窗口改变大小的事件。
         window.addEventListener("resize", ()=>{
-            this.$store.dispatch("rootWindowResizeFlagAction");
+            //this.$store.dispatch("rootWindowResizeFlagAction");
         });
   }
 }
