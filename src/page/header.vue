@@ -15,6 +15,7 @@
         line-height: 48px;
         position: fixed;
         top: 0;
+        z-index: 10000;
         background-color: #fff;
     }
 </style>

@@ -22,19 +22,19 @@
                 menus: [
                     {
                         path: '/',
-                        text: '??',
+                        text: '查价',
                         normal: '../../assets/icon_mineNo.png',
                         active: '../../assets/icon_mine.png'
                     },
                     {
                         path: '/content/1',
-                        text: '??',
+                        text: '报价',
                         normal: '../../assets/icon_mineNo.png',
                         active: '../../assets/icon_mine.png'
                     },
                     {
                         path: '/mine',
-                        text: '??',
+                        text: '我的',
                         normal: '../../assets/icon_mineNo.png',
                         active: '../../assets/icon_mine.png'
                     }
@@ -43,6 +43,7 @@
         },
         methods: {
             changeTabs (checked) {
+                //alert(checked)
                 this.$router.push(this.menus[checked].path)
             }
         }
@@ -72,7 +73,7 @@
         width: 50%;
         text-align: center;
     } */
-    .van-tabbar-item__icon{
-        height: 20px;
+    .van-tabbar-item--active{
+        color: #ffb304;
     }
 </style>

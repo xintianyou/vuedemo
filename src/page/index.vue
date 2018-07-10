@@ -14,12 +14,20 @@
 				</van-field>
 			</van-cell-group>
 			<van-cell-group>
-				<van-field label="银行名：" v-model="bankType" placeholder="请选择银行类型" is-link @click="isBankTypeShow = true" readonly></van-field>
+				<van-field 
+					label="银行类型:" 
+					v-model="bankType" 
+					placeholder="请选择银行类型" 
+					is-link 
+					@click="isBankTypeShow = true" 
+					readonly
+					>
+				</van-field>
 			</van-cell-group>
 			<van-cell-group>
 				<van-field
 					v-model="bankName"
-					label="银行名："
+					label="银 行 名:"
 					type="textarea"
 					placeholder="请输入银行名"
 					rows="1"
@@ -27,7 +35,15 @@
 				/>
 			</van-cell-group>
 			<van-cell-group>
-				<van-field label="到期日：" v-model="date" placeholder="请选择到期日" is-link @click="isDatePickerShow = true" readonly></van-field>
+				<van-field 
+					label="到 期 日:" 
+					v-model="initDate" 
+					placeholder="请选择到期日" 
+					is-link 
+					@click="isDatePickerShow = true" 
+					readonly
+					>
+				</van-field>
 			</van-cell-group>
 			<div class="moreContent">
 				<van-collapse v-model="activeName" accordion>
@@ -76,7 +92,8 @@
 				bankType:'',
 				bankTypeId: '',
 				bankName: '',
-				date: new Date().toLocaleDateString(),
+				initDate: '',
+				date: '',
 				isBankTypeShow: false,
 				isDatePickerShow: false,
 				banksName:[],
@@ -101,6 +118,27 @@
 					case 0:
 						this.bankTypeId = 401;
 					break;
+					case 1:
+						this.bankTypeId = 409;
+					break;
+					case 2:
+						this.bankTypeId = 402;
+					break;
+					case 3:
+						this.bankTypeId = 404;
+					break;
+					case 4:
+						this.bankTypeId = 405;
+					break;
+					case 5:
+						this.bankTypeId = 406;
+					break;
+					case 6:
+						this.bankTypeId = 407;
+					break;
+					case 7:
+						this.bankTypeId = 408;
+					break;
 				}
 				this.isBankTypeShow = false;
 			},
@@ -108,9 +146,9 @@
 				this.isBankTypeShow = false;
 			},
 			sureDate () { 
-				// let myDate = this.date;
-				// myDate = myDate.replace(/\//g,'-');
-				// this.date = myDate;
+				let myDate = this.date;
+				myDate = myDate.toLocaleDateString().replace(/\//g,'-');
+				this.initDate = myDate;
 				this.isDatePickerShow = false;
 			},
 			cancelDate () {
@@ -121,7 +159,7 @@
 					billSumPrice: this.price,
 					bankType: this.bankTypeId,
 					bankName: this.bankName,
-					deadlineDays: (this.date).replace(/\//g,'-'),
+					deadlineDays: this.initDate,
 					billTypeId: '101',
 					billFlaw: '0',
 					outUsageIsEntrance: '0',
@@ -130,6 +168,7 @@
 				})
 				.then(res => {
 					console.log(res)
+					this.$router.push('/searchResult');
 				})
 				.catch(error => {
 					console.log(error);
@@ -140,30 +179,19 @@
 </script>
 
 <style>
-	@import "../style/reset.css";
-	body{
-		margin: 0;
-		padding: 0;
-		background-color: #f2f2f2;
-	}
+	@import "../style/reset.css";	
 	#box{
 		text-align: center;
 		width: 100%;
 		height: 100%;
 		padding-top: 48px;
+		background-color: #f2f2f2;
 	}
-	.main{
+	#box .main{
 		width: 90%;
-		height: 100%;
 		padding-top: 20px;
 		margin-left: 5%;
-	}
-	ul, li{
-		list-style: none;
-	}
-	.header{
-		height: 48px;
-		width: 100%;
+		padding-bottom: 50px;
 	}
 	.van-cell{
 		padding: 10px 10px;
