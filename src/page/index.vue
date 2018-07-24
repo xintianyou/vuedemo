@@ -101,15 +101,16 @@
 			}
 		},
 		created() {
-			this.$http.get("http://139.224.112.243:8022/v1/mainconstants/constant/getConstantType").then(res => {
-				let banks = res.data.data.bankType;
-				for(let i=0;i<banks.length;i++){
-					this.banksName.push(banks[i].constantName);
-				}
-			})
-			.catch(error => {
-				console.log(error);
-			});
+			// this.$http.get("http://139.224.112.243:8022/v1/mainconstants/constant/getConstantType")
+			// .then(res => {
+			// 	let banks = res.data.data.bankType;
+			// 	for(let i=0;i<banks.length;i++){
+			// 		this.banksName.push(banks[i].constantName);
+			// 	}
+			// })
+			// .catch(error => {
+			// 	console.log(error);
+			// });
 		},
 		methods:{
 			onConfirm (value, index) {

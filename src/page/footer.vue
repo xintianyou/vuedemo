@@ -14,6 +14,8 @@
     </div>
 </template>
 <script>
+    import Main from '../../static/img/icon_mine.png';
+    import MainNo from '../../static/img/icon_mineNo.png';  
     export default {
         name: 'Footer',
         data () {
@@ -23,20 +25,20 @@
                     {
                         path: '/',
                         text: '查价',
-                        normal: '../../assets/icon_mineNo.png',
-                        active: '../../assets/icon_mine.png'
+                        normal: MainNo,
+                        active: Main
                     },
                     {
                         path: '/content/1',
                         text: '报价',
-                        normal: '../../assets/icon_mineNo.png',
-                        active: '../../assets/icon_mine.png'
+                        normal: MainNo,
+                        active: Main
                     },
                     {
                         path: '/mine',
                         text: '我的',
-                        normal: '../../assets/icon_mineNo.png',
-                        active: '../../assets/icon_mine.png'
+                        normal: MainNo,
+                        active: Main
                     }
                 ]
             }

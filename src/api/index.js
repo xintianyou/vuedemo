@@ -1,5 +1,5 @@
 // 配置API接口地址
-var root = 'http://139.224.112.243:8022/v1/'
+var root = 'http://139.224.112.243:8022/v1'
 // 引用axios
 var axios = require('axios')
 // 自定义判断元素类型JS

@@ -11,18 +11,18 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/apis': {
+      '/api': {
         // 测试环境
         target: 'http://139.224.112.243:8022/v1',  // 接口域名
         changeOrigin: true,  //是否跨域
         pathRewrite: {
-            '^/apis': ''   //需要rewrite重写的,
+            '^/api': ''   //需要rewrite重写的,
         }              
       }
     },
 
     // Various Dev Server settings
-    host: '192.168.1.176', // can be overwritten by process.env.HOST
+    host: 'localhost', // can be overwritten by process.env.HOST
     port: 8888, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
@@ -59,7 +59,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps

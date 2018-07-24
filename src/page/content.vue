@@ -3,7 +3,7 @@
 		<vHeader></vHeader>
 		<div class="main">
 			<van-tabs v-model="active" @click="changeRole">
-				<van-tab v-for="index in 2">
+				<van-tab v-for="index in 2" :key="index">
 					<div slot="title">
 						{{ index == 1 ? '我是票方' : '我是资方' }}
 					</div>

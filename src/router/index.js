@@ -4,6 +4,7 @@ import Index from '@/page/index'
 import Content from '@/page/content'
 import Mine from '@/page/mine'
 import SearchResult from '@/page/searchResult'
+import Translate from '@/page/Translate'
 
 Vue.use(Router)
 
@@ -24,7 +25,11 @@ export default new Router({
     {
         path: '/searchResult',
         component: SearchResult
+    },
+    {
+        path: '/translate',
+        component: Translate
     }
   ],
-  mode:"history"
+  mode:"hash"
 })
