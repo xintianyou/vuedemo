@@ -13,7 +13,9 @@
           <button @click="num++" :disabled="this.price == 0">+</button>
         </P>
         <P>总价:{{ price*num }}</P>
-        <button class="" @click="tTtranslate">跳转</button>
+        <button class="" @click="tTtranslate">翻译</button>
+        <br>
+        <button class="" @click="tGoods">商品</button>
       </div>
       <vFooter></vFooter>
   </div>
@@ -42,6 +44,9 @@ export default {
     },
     tTtranslate () {
       this.$router.push('/translate');
+    },
+    tGoods () {
+      this.$router.push('/goods');
     }
   },
   watch: {

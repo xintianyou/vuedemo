@@ -10,7 +10,9 @@ import { DatetimePicker } from 'vant';
 import vHeader from './page/header';
 import vFooter from './page/footer';
 import vueResource from 'vue-resource';
-// import axios from 'axios'
+import { Popup } from 'vant';
+
+
 
 Vue.config.productionTip = false
 Vue.use(Vant);
@@ -18,7 +20,7 @@ Vue.use(DatetimePicker);
 Vue.component('vHeader',vHeader);
 Vue.component('vFooter',vFooter);
 Vue.use(vueResource);
-// Vue.use(axios);
+Vue.use(Popup);
 
 //Vue.prototype.$http = api
 /* eslint-disable no-new */

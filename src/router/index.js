@@ -5,6 +5,7 @@ import Content from '@/page/content'
 import Mine from '@/page/mine'
 import SearchResult from '@/page/searchResult'
 import Translate from '@/page/Translate'
+import Goods from '@/page/goods'
 
 Vue.use(Router)
 
@@ -29,6 +30,10 @@ export default new Router({
     {
         path: '/translate',
         component: Translate
+    },
+    {
+        path: '/goods',
+        component: Goods
     }
   ],
   mode:"hash"
